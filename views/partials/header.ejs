@@ -5,4 +5,14 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <nav>
+        <img src="/images/camera.svg">
+        <a href="/" <%- title === 'Show All' ? 'class="active"' : '' %>>HOME PAGE</a>
+        <a href="/musics">music page</a>
+        <% if (user) { %>
+          <a href="/logout">LOG OUT</a>
+        <% } else { %>
+          <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+      </nav>
     <h1><%= title %></h1>
