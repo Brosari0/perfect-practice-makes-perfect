@@ -1,5 +1,15 @@
 <%- include('../partials/header') %> 
 
+<% if (user) { %>
+<a href="/musics/new">Make a new post!</a>
+<% } %>
+
+<% posts.forEach(function(p) { %>
+    <div><a href="<%= p.link %>" target="_blank">link</a>
+    <%= p.instrument %>
+    <%= p.comment %>
+</div>
+<% }); %>
 
 <%- include('../partials/footer') %> 
 
