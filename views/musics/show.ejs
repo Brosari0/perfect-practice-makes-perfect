@@ -1,6 +1,23 @@
 <%- include('../partials/header') %> 
+<div>
+    <a href="<%= post.link %>">Link</a><br>
+    <%= post.comment %>
+    <%= post.instrument  %>
+    <% if (post.review.length) %>
+    <% post.review.forEach(function(r) { %>
+       <%= r.review %>
+    <% }); %>
+    <% if (user) { %>
+        <form action="/musics/<%= post._id %>/reviews" method="PUT">
+            <label for="reviews">Leave a comment</label>
+            <input type="text" name="content">
+            <input type="submit" value="Add Comment">
+        </form>
+    <% } else { %>
+        You must be logged in to leave a comment!
+    <% } %>
 
-
+</div>
 
 <%- include('../partials/footer') %> 
 
