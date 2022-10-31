@@ -5,6 +5,13 @@ module.exports = {
     index,
     new: newMusic,
     create,
+    show,
+}
+
+function show(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+        res.render('musics/show', {title: 'Show Page', post});
+    });
 }
 
 function create(req, res) {

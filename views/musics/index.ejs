@@ -5,11 +5,13 @@
 <% } %>
 
 <% posts.forEach(function(p) { %>
-    <div><a href="<%= p.link %>" target="_blank">link</a>
-    <%= p.instrument %>
-    <%= p.comment %>
-</div>
-<% }); %>
+    <div>
+        <a href="<%= p.link %>" target="_blank">link</a>
+        <%= p.instrument %>
+        <%= p.comment %>
+        <a href="/musics/<%= p._id %>">Comments</a>
+    </div>
+        <% }); %>
 
 <%- include('../partials/footer') %> 
 
