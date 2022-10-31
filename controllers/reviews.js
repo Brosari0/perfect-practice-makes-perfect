@@ -7,11 +7,10 @@ module.exports = {
 }
 
 function edit(req, res) {
-    Post.findById(req.params.id, function(err, post) {
-        res.render('reviews/edit', {
-            title: 'Edit Page',
-            post
-        });
+    let post = Post.findById(req.params._id);
+    res.render('reviews/edit', {
+        title: 'Edit Page',
+        post
     });
 }
 
