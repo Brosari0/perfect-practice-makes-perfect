@@ -6,7 +6,6 @@ module.exports = {
 }
 
 function create(req, res) {
-    console.log('here');
     Post.findById(req.params.id, function(err, post) {
         req.body.user = req.user._id;
         req.body.userName = req.user.name;

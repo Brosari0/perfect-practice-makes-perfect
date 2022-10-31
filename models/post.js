@@ -23,6 +23,13 @@ const postSchema = new Schema({
     googleId: {
         type: String,
     },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    userName: String,
+    userAvatar: String,
     comment: String,
     review: [reviewSchema]
 }, {

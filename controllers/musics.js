@@ -15,7 +15,10 @@ function show(req, res) {
 }
 
 function create(req, res) {
-    let post = new Post(req.body)
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvater = req.user.avatar;
+    let post = new Post(req.body);
     post.save(function(err) {
         if (err) return res.redirect('/musics/new');
         res.redirect('/musics');

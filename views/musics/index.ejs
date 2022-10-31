@@ -6,6 +6,8 @@
 
 <% posts.forEach(function(p) { %>
     <div>
+        <img alt="avatar" src="<%= p.userAvatar %>" referrerpolicy="no-referrer">
+        <%= p.userName %>
         <a href="<%= p.link %>" target="_blank">link</a>
         <%= p.instrument %>
         <%= p.comment %>
