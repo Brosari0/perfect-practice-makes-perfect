@@ -8,7 +8,7 @@
        <%= r.review %>
     <% }); %>
     <% if (user) { %>
-        <form action="/musics/<%= post._id %>/reviews" method="PUT">
+        <form action="/musics/<%= post._id %>/reviews" method="POST">
             <label for="reviews">Leave a comment</label>
             <input type="text" name="content">
             <input type="submit" value="Add Comment">
