@@ -3,6 +3,18 @@ const User = require('../models/user');
 
 module.exports = {
     create,
+    edit,
+
+}
+
+function edit(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+
+        res.render('musics/edit', {
+            title: 'Edit Page',
+            post
+        });
+    });
 }
 
 function create(req, res) {
@@ -15,5 +27,4 @@ function create(req, res) {
             res.redirect(`/musics/${post._id}`);
         });
     });
-
 }

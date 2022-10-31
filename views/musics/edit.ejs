@@ -1,0 +1,14 @@
+<%- include('../partials/header') %> 
+
+<form action="/musics/<%= post.id %>?_method=PUT" method="POST">
+    <label for="link">Link your music</label>
+    <input type="text" name="link" value="<%= post.link %>">
+    <label for="instrument">Instrument</label>
+    <input type="text" name="instrument" id="" value="<%= post.instrument %>">
+    <label for="comment">Comment</label>
+    <input type="text" name="comment" id="comment" value="<%= post.comment %>">
+    <input type="submit" value="Submit">
+</form>
+
+<%- include('../partials/footer') %> 
+
