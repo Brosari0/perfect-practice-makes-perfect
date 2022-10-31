@@ -6,7 +6,9 @@ const userSchema = new Schema({
     googleId: {
         type: String,
         required: true
-    }
+    },
+    email: String,
+    avatar: String
 }, {
     timestamps: true
 });

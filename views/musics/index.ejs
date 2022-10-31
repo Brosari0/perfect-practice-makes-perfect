@@ -6,6 +6,9 @@
 
 <% posts.forEach(function(p) { %>
     <div>
+        <% if (user?._id.equals(p.user)) { %>
+        <a href="/musics/<%= p._id %>/edit">Edit</a>
+    <% } %>
         <img alt="avatar" src="<%= p.userAvatar %>" referrerpolicy="no-referrer">
         <%= p.userName %>
         <a href="<%= p.link %>" target="_blank">link</a>
