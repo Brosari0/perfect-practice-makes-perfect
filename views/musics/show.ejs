@@ -5,6 +5,9 @@
     <%= post.instrument  %><br>
     <% if (post.review.length) %>
     <% post.review.forEach(function(r) { %>
+        <% if (user?._id.equals(r.user)) { %>
+            <a href="/reviews/<%= r._id %>">Edit</a>
+        <% } %>
         <img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer">
         <%= r.userName %>:
         |

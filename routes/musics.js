@@ -10,6 +10,10 @@ router.post('/', musicsCtrl.create);
 
 router.get('/:id', musicsCtrl.show);
 
+router.get('/:id/edit', musicsCtrl.edit);
+
+router.put('/:id', musicsCtrl.update);
+
 
 
 module.exports = router;
