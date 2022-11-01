@@ -15,6 +15,8 @@ router.get('/:id/edit', ensureLoggedIn, musicsCtrl.edit);
 
 router.put('/:id', ensureLoggedIn, musicsCtrl.update);
 
+router.delete('/:id', ensureLoggedIn, musicsCtrl.delete);
+
 
 
 module.exports = router;

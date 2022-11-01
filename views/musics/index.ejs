@@ -8,6 +8,9 @@
     <div>
         <% if (user?._id.equals(p.user)) { %>
         <a href="/musics/<%= p._id %>/edit">Edit</a>
+        <form action="/musics/<%= p._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>        
     <% } %>
         <img alt="avatar" src="<%= p.userAvatar %>" referrerpolicy="no-referrer">
         <%= p.userName %>

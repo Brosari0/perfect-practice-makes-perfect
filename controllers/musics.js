@@ -8,6 +8,13 @@ module.exports = {
     show,
     edit,
     update,
+    delete: deletePost
+}
+
+function deletePost(req, res) {
+    Post.findOneAndDelete(req.params.id, function(err) {
+        res.redirect('/musics');
+    });
 }
 
 function update(req, res) {
