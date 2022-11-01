@@ -1,18 +1,19 @@
 var express = require('express');
 var router = express.Router()
 var musicsCtrl = require('../controllers/musics');
+var ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.get('/', musicsCtrl.index);
 
-router.get('/new', musicsCtrl.new);
+router.get('/new', ensureLoggedIn, musicsCtrl.new);
 
-router.post('/', musicsCtrl.create);
+router.post('/', ensureLoggedIn, musicsCtrl.create);
 
 router.get('/:id', musicsCtrl.show);
 
-router.get('/:id/edit', musicsCtrl.edit);
+router.get('/:id/edit', ensureLoggedIn, musicsCtrl.edit);
 
-router.put('/:id', musicsCtrl.update);
+router.put('/:id', ensureLoggedIn, musicsCtrl.update);
 
 
 
