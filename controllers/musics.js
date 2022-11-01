@@ -21,7 +21,7 @@ function update(req, res) {
     Post.findById(req.params.id, function(err, post) {
         post.link = req.body.link;
         post.instrument = req.body.instrument;
-        post.comment = req.body.comment;
+        post.postComment = req.body.postComment;
         post.save(function(err) {
             if (err) return res.redirect('/musics/new');
             res.redirect('/musics');

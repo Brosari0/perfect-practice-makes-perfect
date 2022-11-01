@@ -3,22 +3,22 @@
     <a href="<%= post.link %>" target="_blank">Link</a><br>
     <%= post.comment %>
     <%= post.instrument  %><br>
-    <% if (post.review.length) %>
-    <% post.review.forEach(function(r) { %>
-        <% if (user?._id.equals(r.user)) { %>
-            <a href="/reviews/<%= r._id %>/edit">Edit</a>
-            <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+    <% if (post.comments.length) %>
+    <% post.comments.forEach(function(c) { %>
+        <% if (user?._id.equals(c.user)) { %>
+            <a href="/comments/<%= c._id %>/edit">Edit</a>
+            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
                 <button type="submit">Delete</button>
             </form>
         <% } %>
-        <img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer">
-        <%= r.userName %>:
+        <img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer">
+        <%= c.userName %>:
         |
-       <%= r.content %>
+       <%= c.content %>
     <% }); %>
     <% if (user) { %>
-        <form action="/musics/<%= post._id %>/reviews" method="POST">
-            <label for="reviews">Leave a comment</label>
+        <form action="/musics/<%= post._id %>/comments" method="POST">
+            <label for="comments">Leave a comment</label>
             <input type="text" name="content">
             <input type="submit" value="Add Comment">
         </form>
