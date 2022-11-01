@@ -1,6 +1,6 @@
 <%- include('../partials/header') %> 
 
-<form action="/musics/<%= post._id %>/reviews" method="POST">
+<form action="/reviews/<%= review._id %>" method="POST">
     <label for="reviews">Leave a comment</label>
     <input type="text" name="content" value="<%= review.content %>">
     <input type="submit" value="Add Comment">

@@ -4,6 +4,6 @@ var reviewsCtrl = require('../controllers/reviews');
 
 router.post('/musics/:id/reviews', reviewsCtrl.create);
 
-router.get('/reviews/:id', reviewsCtrl.edit)
+router.get('/reviews/:reviewId/edit', reviewsCtrl.edit)
 
 module.exports = router;
