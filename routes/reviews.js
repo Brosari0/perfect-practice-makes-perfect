@@ -5,6 +5,8 @@ var ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.post('/musics/:id/reviews', ensureLoggedIn, reviewsCtrl.create);
 
-router.get('/reviews/:reviewId/edit', ensureLoggedIn, reviewsCtrl.edit)
+router.get('/reviews/:reviewId/edit', ensureLoggedIn, reviewsCtrl.edit);
+
+router.put('/reviews/:id', ensureLoggedIn, reviewsCtrl.update);
 
 module.exports = router;

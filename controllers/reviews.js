@@ -3,7 +3,19 @@ const User = require('../models/user');
 
 module.exports = {
     create,
-    edit
+    edit,
+    update,
+}
+
+function update(req, res) {
+    Post.findOne({'reviews._id': req.params.id}, function(err, post) {
+        const review = post.review.id(req.params.id);
+        // if (!review.userId.equals(req.user._id)) return res.redirect(`/musics/${post._id}`);
+        review.content = req.body.content;
+        post.save(function(err) {
+            res.redirect(`/musics/${post._id}`);
+        });
+    });
 }
 
 function edit(req, res) {
