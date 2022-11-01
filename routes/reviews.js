@@ -9,4 +9,6 @@ router.get('/reviews/:reviewId/edit', ensureLoggedIn, reviewsCtrl.edit);
 
 router.put('/reviews/:id', ensureLoggedIn, reviewsCtrl.update);
 
+router.delete('/reviews/:id', ensureLoggedIn, reviewsCtrl.delete);
+
 module.exports = router;

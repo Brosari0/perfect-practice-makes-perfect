@@ -5,6 +5,17 @@ module.exports = {
     create,
     edit,
     update,
+    delete: deleteReview,
+}
+
+function deleteReview(req, res) {
+    Post.findOne({'reviews._id': req.params.id}, function(err, post) {
+        if (!post || err) return res.redirect( `/musics/${post._id}`);
+        post.review.remove(req.params.id);
+        post.save(function(err) {
+            res.redirect(`/musics/${post._id}`)
+        });
+    });
 }
 
 function update(req, res) {
