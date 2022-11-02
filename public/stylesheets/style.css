@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
 }
 
 a {
@@ -27,4 +28,14 @@ a {
 .review-user img {
   border-radius: 50%;
   height: 40px;
+}
+
+.user-image {
+  height: 30px;
+  width: auto;
+  border-radius: 50%;
+}
+
+div {
+  background-color: rgba(169, 169, 169, 0.836);
 }
