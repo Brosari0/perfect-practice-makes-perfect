@@ -1,34 +1,28 @@
-<%- include('../partials/header') %> 
-
+<%- include('../partials/header') %>
 
 <div>
-    <a href="<%= post.link %>" target="_blank">Link</a><br>
-    <%= post.postComment %>
-    <%= post.instrument  %><br>
-    <% if (post.comments.length) %>
-    <% post.comments.forEach(function(c) { %>
-        <% if (user?._id.equals(c.user)) { %>
-            <a href="/comments/<%= c._id %>/edit">Edit</a>
-            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
-            </form>
-        <% } %>
-        <img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer">
-        <%= c.userName %>:
-        |
-       <%= c.content %>
-    <% }); %>
-    <% if (user) { %>
-        <form action="/musics/<%= post._id %>/comments" method="POST">
-            <label for="comments">Leave a comment</label>
-            <input type="text" name="content">
-            <input type="submit" value="Add Comment">
-        </form>
-    <% } else { %>
-        You must be logged in to leave a comment!
-    <% } %>
-
+  <a href="<%= post.link %>" target="_blank">Link</a><br />
+  <%= post.postComment %> <%= post.instrument %><br />
+  <% if (post.comments.length) %> <% post.comments.forEach(function(c) { %> <%
+  if (user?._id.equals(c.user)) { %>
+  <a href="/comments/<%= c._id %>/edit">Edit</a>
+  <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+  </form>
+  <% } %>
+  <img
+    class="user-image"
+    alt="avatar"
+    src="<%= c.userAvatar %>"
+    referrerpolicy="no-referrer"
+  />
+  <%= c.userName %>: | <%= c.content %> <% }); %> <% if (user) { %>
+  <form action="/musics/<%= post._id %>/comments" method="POST">
+    <label for="comments">Leave a comment</label>
+    <input type="text" name="content" />
+    <input type="submit" value="Add Comment" />
+  </form>
+  <% } else { %> You must be logged in to leave a comment! <% } %>
 </div>
 
-<%- include('../partials/footer') %> 
-
+<%- include('../partials/footer') %>

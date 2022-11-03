@@ -1,22 +1,22 @@
-<%- include('../partials/header') %> 
+<%- include('../partials/header') %>
 <div class="container">
-    <form id="add-post" action="/musics" method="POST">
-            <div class="col-sm">
-            <label for="link">Link your music</label>
-            <input type="text" name="link">
-        </div>
-        <div class="col-sm">
-            <label for="instrument">Instrument</label>
-            <input type="text" name="instrument" id="">
-        </div>
-        <div class="col-sm">
-            <label for="postComment">Comment</label>
-            <input type="text" name="postComment" id="comment">
-        </div>
-        <button type="Submit" class="btn btn-outline-info" value="Submit">Submit</button>
-    </form>
+  <form id="add-post" action="/musics" method="POST">
+    <div class="col-sm">
+      <label for="link">Link your music</label>
+      <input type="text" name="link" />
+    </div>
+    <div class="col-sm">
+      <label for="instrument">Instrument</label>
+      <input type="text" name="instrument" id="" />
+    </div>
+    <div class="col-sm">
+      <label for="postComment">Comment</label>
+      <input type="text" name="postComment" id="comment" />
+    </div>
+    <button type="Submit" class="btn btn-outline-info" value="Submit">
+      Submit
+    </button>
+  </form>
 </div>
 
-
-<%- include('../partials/footer') %> 
-
+<%- include('../partials/footer') %>

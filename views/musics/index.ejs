@@ -1,52 +1,45 @@
-<%- include('../partials/header') %> 
-
-
-<% posts.forEach(function(p) { %>
-    <div>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-sm-8">
-                    <img class="user-image" alt="avatar" src="<%= p.userAvatar %>" referrerpolicy="no-referrer">
-                    <%= p.userName %>
-                </div>
-                <div class="col-sm-4">
-                    <div class="row">
-                    <% if (user?._id.equals(p.user)) { %>
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-outline-info">
-                                <a href="/musics/<%= p._id %>/edit">Edit</a>
-                            </button>
-                            <div class="col-sm-4">
-                            <form action="/musics/<%= p._id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="btn btn-outline-info">Delete</button>
-                            </form>        
-                        </div>
-                        </div>
-                    <% } %>
-                </div>
-                    <button type="button" class="btn btn-outline-info">
-                        <a href="<%= p.link %>" target="_blank">Link</a>
-                    </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    Instrument(s) <%= p.instrument %>
-                </div>
-                <div class="col-sm-8">
-                    <%= p.postComment %>
-                </div>
-            </div>         
-            <div class="row">
-            <div class="col-sm">
-                <button type="button" class="btn btn-outline-info">
-                    <a href="/musics/<%= p._id %>">Comments</a>
-                </button>      
-            </div>
-            </div>
-          </div>
+<%- include('../partials/header') %> <% posts.forEach(function(p) { %>
+<div>
+  <div class="container text-center">
+    <% if (user?._id.equals(p.user)) { %>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-info">
+        <a href="/musics/<%= p._id %>/edit">Edit</a>
+      </button>
+      <form action="/musics/<%= p._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-outline-info">Delete</button>
+      </form>
     </div>
-        <% }); %>
-
-<%- include('../partials/footer') %> 
-
+    <% } %>
+    <div class="row">
+      <div class="col-sm-8">
+        <img
+          class="user-image"
+          alt="avatar"
+          src="<%= p.userAvatar %>"
+          referrerpolicy="no-referrer"
+        />
+        <%= p.userName %>
+      </div>
+      <div class="col-sm-4">
+        <button type="button" class="btn btn-outline-info">
+          <a href="<%= p.link %>" target="_blank">Link</a>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        Instrument(s) <%= p.instrument %>
+      </div>
+      <div class="col-sm">
+        <%= p.postComment %>
+      </div>
+      <div class="col-sm">
+        <button type="button" class="btn btn-outline-info">
+          <a href="/musics/<%= p._id %>">Comments</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<% }); %> <%- include('../partials/footer') %>
