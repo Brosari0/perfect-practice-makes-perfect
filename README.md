@@ -8,9 +8,9 @@
 
   ### [CLICK TO DEMO](https://perfect-practice-makes-perfect.herokuapp.com/)
 
-  ##### Amar Pan
+  ##### Rosario Rumore
 
-  [![LinkedIn Badge](https://img.shields.io/badge/-@profpan396-blue?style=flat&logo=Linkedin&logoColor=black)](https://www.linkedin.com/in/profpan396/)
+  [![LinkedIn Badge](https://img.shields.io/badge/-@Rosario-blue?style=flat&logo=Linkedin&logoColor=black)](www.linkedin.com/in/rosariorumore)
 
   ## :pencil: Description
 
