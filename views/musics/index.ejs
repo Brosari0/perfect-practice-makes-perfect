@@ -1,45 +1,36 @@
 <%- include('../partials/header') %> <% posts.forEach(function(p) { %>
-<div>
-  <div class="container text-center">
-    <% if (user?._id.equals(p.user)) { %>
-    <div class="col-sm">
-      <button type="button" class="btn btn-outline-info">
-        <a href="/musics/<%= p._id %>/edit">Edit</a>
-      </button>
-      <form action="/musics/<%= p._id %>?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-outline-info">Delete</button>
-      </form>
-    </div>
-    <% } %>
-    <div class="row">
-      <div class="col-sm-8">
-        <img
-          class="user-image"
-          alt="avatar"
-          src="<%= p.userAvatar %>"
-          referrerpolicy="no-referrer"
-        />
-        <%= p.userName %>
-      </div>
-      <div class="col-sm-4">
-        <button type="button" class="btn btn-outline-info">
-          <a href="<%= p.link %>" target="_blank">Link</a>
-        </button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        Instrument(s) <%= p.instrument %>
-      </div>
-      <div class="col-sm">
-        <%= p.postComment %>
-      </div>
-      <div class="col-sm">
-        <button type="button" class="btn btn-outline-info">
-          <a href="/musics/<%= p._id %>">Comments</a>
-        </button>
-      </div>
-    </div>
+<div class="container">
+  <span class="user-display">
+    <img
+    class="user-image"
+    alt="avatar"
+    src="<%= p.userAvatar %>"
+    referrerpolicy="no-referrer"
+    />
+    <%= p.userName %>
+    <span class="instrument">
+      | Instrument(s) <%= p.instrument %> 
+    </span>
+  </span>
+  <div class="user-comment">
+    <%= p.postComment %>
+    <button type="button" class="button-mine link">
+      <a href="<%= p.link %>" target="_blank">Listen to the music!</a>
+    </button>
   </div>
+  <% if (user?._id.equals(p.user)) { %>
+  <section class="edit-delete">
+    <button type="button" class="button-mine">
+      <a href="/musics/<%= p._id %>/edit">Edit</a>
+    </button>
+    <form action="/musics/<%= p._id %>?_method=DELETE" method="POST">
+      <button type="submit" class="button-mine">Delete</button>
+    </form>
+  </section>
+  <% } %>
+
+  <button type="button" class="button-mine">
+    <a href="/musics/<%= p._id %>">Comments</a>
+  </button>
 </div>
 <% }); %> <%- include('../partials/footer') %>

@@ -1,28 +1,49 @@
 <%- include('../partials/header') %>
 
-<div>
-  <a href="<%= post.link %>" target="_blank">Link</a><br />
-  <%= post.postComment %> <%= post.instrument %><br />
-  <% if (post.comments.length) %> <% post.comments.forEach(function(c) { %> <%
-  if (user?._id.equals(c.user)) { %>
-  <a href="/comments/<%= c._id %>/edit">Edit</a>
-  <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
-  </form>
-  <% } %>
-  <img
+<div class="container">
+  <span class="user-display">
+    <img
+      class="user-image"
+      alt="avatar"
+      src="<%= post.userAvatar %>"
+      referrerpolicy="no-referrer"
+    />
+    <%= post.userName %>
+    <span class="instrument">
+      | Instrument(s) <%= post.instrument %>
+    </span>
+  </span>
+  <div class="user-comment">
+    <%= post.postComment %>
+    <button type="button" class="button-mine link">
+      <a href="<%= post.link %>" target="_blank">Listen to the music!</a>
+    </button>
+  </div>
+</div>
+<% if (post.comments.length) %> 
+<% post.comments.forEach(function(c) { %> 
+  <div class="container-comment">
+    <img
     class="user-image"
     alt="avatar"
     src="<%= c.userAvatar %>"
     referrerpolicy="no-referrer"
-  />
-  <%= c.userName %>: | <%= c.content %> <% }); %> <% if (user) { %>
-  <form action="/musics/<%= post._id %>/comments" method="POST">
-    <label for="comments">Leave a comment</label>
-    <input type="text" name="content" />
-    <input type="submit" value="Add Comment" />
-  </form>
-  <% } else { %> You must be logged in to leave a comment! <% } %>
+    />
+    <%= c.userName %>: <%= c.content %> 
+    <% if (user?._id.equals(c.user)) { %>
+      <button class="button-edit-delete"><a href="/comments/<%= c._id %>/edit">Edit</a>
+        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+          <button class="button-mine"type="submit">Delete</button>
+        </form>
+      </button>
+      <% } %>
+    <% }); %> 
+  <% if (user) { %>
+    <form action="/musics/<%= post._id %>/comments" method="POST">
+      <label for="comments">Leave a comment</label>
+      <input type="text" name="content" />
+      <input type="submit" value="Add Comment" />
+    </form>
 </div>
-
+  <% } else { %> You must be logged in to leave a comment! <% } %>
 <%- include('../partials/footer') %>

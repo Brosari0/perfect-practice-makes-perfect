@@ -1,12 +1,12 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(50, 2, 85);
+  background-color: peachpuff;
   height: 100vh;
+  color: rgb(219, 78, 12);
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(219, 78, 12);
   text-decoration: none;
 }
 
@@ -42,22 +42,65 @@ nav {
   background: rgb(4,92,184);
   background: linear-gradient(143deg, rgba(4,92,184,1) 42%, rgba(96,5,154,1) 50%, rgba(252,0,255,1) 58%);
 }
-.col-sm {
-  font-size: 30px;
+
+.container {
+  border-style: solid;
+  border-color: rgb(219, 78, 12);
+  margin: 20px auto;
+  border-radius: 10px;
 }
 
-.col-sm-8 {
-  font-size: 20px;
-}
-.col-sm, .col-sm-8, .col-sm-4 {
-  color:#00B7FF
-}
-.container {
-  border-style: double;
-  border-color: #00B7FF;
-  margin: 20px auto;
+.container-comment {
+  max-width: 720px;
+  width: 100%;
+  padding: 0 15px;
 }
 
 .user-display {
-  color:#00B7FF
+  color: rgb(219, 78, 12);
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.edit-delete {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-comment {
+  color: rgb(219, 78, 12);
+  font-size: 30px;
+}
+
+.button-mine {
+  border-color: rgb(219, 78, 12);
+  background-color: transparent;
+  color: rgb(219, 78, 12);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.button-edit-delete {
+  border-color: rgb(219, 78, 12);
+  background-color: transparent;
+  color: rgb(219, 78, 12);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0px;
+}
+
+.instrument {
+  color:rgb(219, 78, 12);
+  font-size: 15px;
+}
+
+.link {
+  padding: 10px 50px;
+  border-radius: 15px;
+}
+
+p {
+  margin: 30px; 
+  font-size: 30px;
 }
