@@ -65,6 +65,11 @@ nav {
   justify-content: flex-end;
 }
 
+.please-be-centered {
+  display: flex;
+  justify-content: center;
+}
+
 .user-comment {
   color: rgb(219, 78, 12);
   font-size: 30px;
