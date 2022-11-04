@@ -20,30 +20,29 @@
     </button>
   </div>
 </div>
-<% if (post.comments.length) %> 
-<% post.comments.forEach(function(c) { %> 
+<div class="spacer">
+  <% if (post.comments.length) %> <% post.comments.forEach(function(c) { %>
   <div class="container-comment">
     <img
-    class="user-image"
-    alt="avatar"
-    src="<%= c.userAvatar %>"
-    referrerpolicy="no-referrer"
+      class="user-image"
+      alt="avatar"
+      src="<%= c.userAvatar %>"
+      referrerpolicy="no-referrer"
     />
-    <%= c.userName %>: <%= c.content %> 
-    <% if (user?._id.equals(c.user)) { %>
-      <button class="button-edit-delete"><a href="/comments/<%= c._id %>/edit">Edit</a>
-        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-          <button class="button-mine"type="submit">Delete</button>
-        </form>
-      </button>
-      <% } %>
-    <% }); %> 
-  <% if (user) { %>
+    <%= c.userName %>: <%= c.content %> <% if (user?._id.equals(c.user)) { %>
+    <button class="button-edit-delete">
+      <a href="/comments/<%= c._id %>/edit">Edit</a>
+      <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+        <button class="button-mine" type="submit">Delete</button>
+      </form>
+    </button>
+    <% } %> <% }); %> <% if (user) { %>
     <form action="/musics/<%= post._id %>/comments" method="POST">
       <label for="comments">Leave a comment</label>
       <input type="text" name="content" />
       <input type="submit" value="Add Comment" />
     </form>
+  </div>
 </div>
-  <% } else { %> You must be logged in to leave a comment! <% } %>
-<%- include('../partials/footer') %>
+<% } else { %> You must be logged in to leave a comment! <% } %> <%-
+include('../partials/footer') %>

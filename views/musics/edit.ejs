@@ -1,18 +1,20 @@
 <%- include('../partials/header') %>
 
-<form action="/musics/<%= post.id %>?_method=PUT" method="POST">
-  <label for="link">Link your music</label>
-  <input type="text" name="link" value="<%= post.link %>" />
-  <label for="instrument">Instrument</label>
-  <input type="text" name="instrument" id="" value="<%= post.instrument %>" />
-  <label for="comment">Comment</label>
-  <input
-    type="text"
-    name="postComment"
-    id="postComment"
-    value="<%= post.postComment %>"
-  />
-  <input type="submit" value="Submit" />
-</form>
+<div class="container">
+  <form action="/musics/<%= post.id %>?_method=PUT" method="POST">
+    <label class="user-comment" for="link">Link your music</label>
+    <input type="text" name="link" value="<%= post.link %>" /></br>
+    <label class="user-comment" for="instrument">Instrument</label>
+    <input type="text" name="instrument" id="" value="<%= post.instrument %>" /></br>
+    <label class="user-comment" for="comment">Comment</label>
+    <input
+      type="text"
+      name="postComment"
+      id="postComment"
+      value="<%= post.postComment %>"
+    /></br>
+    <input class="button-mine" type="submit" value="Submit" />
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

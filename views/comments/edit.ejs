@@ -1,14 +1,17 @@
 <%- include('../partials/header') %> 
 
+<div class="container">
 <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
-    <label for="comments">Edit a comment</label>
+    <label class="user-comment" for="comments">Edit a comment</label>
     <input type="text" name="content" value="<%= comment.content %>">
-    <input type="submit" value="Edit Comment">
+    <input class="button-mine" type="submit" value="Edit Comment">
 </form>
 
 <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
+    <button class="button-mine" type="submit">Delete</button>
 </form>
+
+</div>
 
 <%- include('../partials/footer') %> 
 
