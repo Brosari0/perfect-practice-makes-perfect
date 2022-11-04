@@ -21,20 +21,18 @@
 </div>
 
   ## :camera_flash: Screenshots 
-
-  |   Description | Screenshot | 
-  |:-------------:| -----------|
-  | <h3>Feed Page</h3> | <img
-    src="https://github.com/profpan396/meet-your-classmates/blob/main/public/Screenshots/FeedPage.png?raw=true"
-    width="700"
-  /> |
-  | <h3 align="center">Profile Page</h3> | <img
-  src="https://github.com/profpan396/meet-your-classmates/raw/main/public/Screenshots/ProfilePage.png"
-  width="700"
-  /> |
+  
+  <h3 align="center">Home Page</h3>  <img
+  src="https://i.gyazo.com/954603913101cb337695c02355f5a0bc.png"
+ 
+  <h3 align="center">Main Page</h3>  <img
+  src="https://i.gyazo.com/277d0ebc4eb1c3b502d508f7b245005d.png"
+  
+  <h3 align="center">Show Page</h3>  <img
+  src="https://i.gyazo.com/64a603d5913a725b1c9a82edfa9d686f.png"
+ 
 
    ## :computer: Technologies Used
-  A screenshot of your app's landing page and any other screenshots of interest.
 
   ![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
   ![Express](https://img.shields.io/badge/-Express-05122A?style=flat&logo=express)
