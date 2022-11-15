@@ -9,7 +9,7 @@ module.exports = {
 }
 
 function deleteComment(req, res) {
-    Post.findOne({'comments._id': req.params.id}, function(err, post) {
+    Post.findOne({'comments._id': req.params.id, 'comments.user': req.user._id}, function(err, post) {
         if (!post || err) return res.redirect( `/musics/${post._id}`);
         post.comments.remove(req.params.id);
         post.save(function(err) {
@@ -19,7 +19,7 @@ function deleteComment(req, res) {
 }
 
 function update(req, res) {
-    Post.findOne({'comments._id': req.params.id}, function(err, post) {
+    Post.findOne({'comments._id': req.params.id, 'comments.user': req.user._id}, function(err, post) {
         const comment = post.comments.id(req.params.id);
         // if (!comment.userId.equals(req.user._id)) return res.redirect(`/musics/${post._id}`);
         comment.content = req.body.content;
@@ -30,7 +30,7 @@ function update(req, res) {
 }
 
 function edit(req, res) {
-    Post.findOne({'comments._id': req.params.commentId}, function(err, post) {
+    Post.findOne({'comments._id': req.params.commentId, 'comments.user': req.user._id}, function(err, post) {
         const comment = post.comments.id(req.params.commentId);
         res.render('comments/edit', {
             title: 'Edit Page',

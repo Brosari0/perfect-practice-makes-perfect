@@ -12,13 +12,13 @@ module.exports = {
 }
 
 function deletePost(req, res) {
-    Post.findOneAndDelete({'_id': req.params.id}, function(err) {
+    Post.findOneAndDelete({'_id': req.params.id, 'post.user': req.user._id}, function(err) {
         res.redirect('/musics');
     });
 }
 
 function update(req, res) {
-    Post.findById({'_id':req.params.id}, function(err, post) {
+    Post.findById({'_id':req.params.id, 'post.user': req.user._id}, function(err, post) {
         post.link = req.body.link;
         post.instrument = req.body.instrument;
         post.postComment = req.body.postComment;
