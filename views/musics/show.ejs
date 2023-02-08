@@ -36,13 +36,17 @@
         <button class="button-mine" type="submit">Delete</button>
       </form>
     </button>
-    <% } %> <% }); %> <% if (user) { %>
-    <form action="/musics/<%= post._id %>/comments" method="POST">
-      <label for="comments">Leave a comment</label>
-      <input type="text" name="content" />
-      <input type="submit" value="Add Comment" />
-    </form>
   </div>
+  <% } %>
+  <hr />
 </div>
-<% } else { %> You must be logged in to leave a comment! <% } %> <%-
-include('../partials/footer') %>
+<div>
+  <% }); %> <% if (user) { %>
+  <form action="/musics/<%= post._id %>/comments" method="POST">
+    <label for="comments">Leave a comment</label>
+    <input type="text" name="content" />
+    <input type="submit" value="Add Comment" />
+  </form>
+  <% } else { %> You must be logged in to leave a comment! <% } %> 
+</div>
+<%- include('../partials/footer') %>

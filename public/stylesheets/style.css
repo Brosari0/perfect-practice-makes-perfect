@@ -1,12 +1,12 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: peachpuff;
+  background-color: #24201E;
   height: 100vh;
-  color: rgb(219, 78, 12);
+  color: #060504;
 }
 
 a {
-  color: rgb(219, 78, 12);
+  color: #736155;
   text-decoration: none;
 }
 
@@ -40,22 +40,24 @@ a {
 
 nav {
   background: rgb(4,92,184);
-  background: linear-gradient(143deg, rgba(4,92,184,1) 42%, rgba(96,5,154,1) 50%, rgba(252,0,255,1) 58%);
+  background: linear-gradient(143deg, #FDDBC2 42%, #24201E 50%, #060504 58%);
 }
 
 .container {
   border-style: solid;
-  border-color: rgb(219, 78, 12);
+  border-color: #060504;
+  background-color: #FDDBC2;
   margin: 20px auto;
   border-radius: 10px;
 }
 
 .container-comment {
+  margin: 1vh;
   width: 100%;
 }
 
 .user-display {
-  color: rgb(219, 78, 12);
+  color: #736155;
   margin-bottom: 10px;
   font-size: 20px;
 }
@@ -71,35 +73,38 @@ nav {
 }
 
 .user-comment {
-  color: rgb(219, 78, 12);
+  color: #060504;
   font-size: 30px;
 }
 
 .spacer {
-  padding-left: 13vw;
-  padding-right: 13vw;
+  background-color: #FDDBC2;
+  border-radius: 10px;
+  width: 80%;
+  margin: 3vh 10vw;
+  padding: 1vw;
 }
 
 .button-mine {
-  border-color: rgb(219, 78, 12);
+  border-color: #060504;
   background-color: transparent;
-  color: rgb(219, 78, 12);
+  color: #060504;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
 }
 
 .button-edit-delete {
-  border-color: rgb(219, 78, 12);
+  border-color: #060504;
   background-color: transparent;
-  color: rgb(219, 78, 12);
+  color: #060504;
   border-radius: 10px;
   padding: 10px;
   margin: 0px;
 }
 
 .instrument {
-  color:rgb(219, 78, 12);
+  color:#736155;
   font-size: 15px;
 }
 
@@ -111,4 +116,5 @@ nav {
 p {
   margin: 30px; 
   font-size: 30px;
+  color: #FDDBC2
 }
